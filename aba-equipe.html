@@ -1,0 +1,160 @@
+<!--===========================================================================================================
+=======                           Trabalho de Conclusão de Disciplina                              ============
+=======                         Professor: ROBERIO JOSE ROGERIO DOS SANTOS                         ============
+=======                           Disciplina: Sistema de Informacão - II                           ============
+=======                     Equipe:                                                                ============
+=======                                                                                            ============
+============================================================================================================-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projeto de Conclusão de Disciplina, realizado em 23/02/2022, solicitado pelo professor
+    ROBERIO JOSE ROGERIO DOS SANTOS, da disciplina de Sistemas de Informacão 2, da Universidade Federal de Alagoas, Campus do Sertão SEDE em Delmiro Gouveia - Alagoas"/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="Lucas de Oliveira, Lorem ipsum, Lorem ipsum, Lorem ipsum" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="robots" content="index,follow" />
+    <title>Módulo de Integração e Gerência de Equipe</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
+    <link rel="aicon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" type="text/css" href="assets/css/geral.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/home.css">
+
+</head>
+<body>
+<header>
+    <div class="container">
+        <!--        Início do menu de navegacão         -->
+        <nav>
+            <ul class="flex main-menu">
+                <li class="menu-item" id="main-menu-logo">
+                    <a href="index.html"><div class="img-wrapper"><img src="assets/img/logo-ufal-sertao.png" alt="Logo da UFAL campos do sertão"></div></a>
+                </li>
+                <li class="menu-item flex">
+                    <a href="index.html"> <h3>Home</h3> </a> 
+                </li>
+                <li class="menu-item flex active">
+                    <a href="aba-equipe.html"><h3>Equipe</h3></a>
+                </li>
+                <li class="menu-item flex">
+                    <a href="aba-proj.html"><h3>Projeto</h3></a>
+                </li>
+            </ul>
+        </nav>
+        <!--        Fim do menu de navegacão         -->
+    </div>
+</header>
+
+<!--        Início do form 1        -->
+<section id="page-1">
+    <div class="container">
+    <form name="form-equipe" onsubmit="return validacao()" method="post" required>
+        <!--    SEcão de dados pessoais     -->
+        <fieldset class="field-personal-data">
+            <!--    linha 1 do form     -->
+            <div class="form-line">
+                <div class="form-item">
+                    <label for="inputName">Nome Completo</label><br>
+                    <input type="text" id="inputName" name="inputName" placeholder="DIGITE AQUI O SEU NOME COMPLETO">
+                </div>
+                <div class="form-item">
+                    <label for="cpf">CPF (Apenas números)</label><br>
+                    <input onkeypress="corrFormatCPF (this); justNumbers (this)" type="text" id="cpf" name = "inputcpf" placeholder="DIGITE AQUI O SEU CPF" maxlength="14">
+                </div>
+            </div>
+            <!--    linha 2 do form     -->
+            <div class="form-line">
+                <div class="form-item">
+                    <label for="und-tab">Unidade de Trabalho</label><br>
+                    <input name="und-tab" type="text" id="und-tab" placeholder="DIGITE AQUI A SUA UNIDADE DE TRABALHO">
+                </div>
+                <div class="form-item">
+                    <label for="corp-time">Tempo na Empresa (em meses)</label><br>
+                    <input name="corp_time" type="number" id="corp-time" placeholder="DIGITE AQUI O SEU TEMPO NA EMPRESA (EM MESES)">
+                </div>
+            </div>
+            <!--    linha 3 do form     -->
+            <div class="form-line">
+                <div class="form-item">
+                    <label for="function">Função ou Cargo</label><br>
+                    <input name="function" type="text" id="function" placeholder="DIGITE AQUI A SUA FUNÇÃO OU CARGO DENTRO DA EMPRESA">
+                </div>
+                <div class="form-item">
+                    <label for="email">E-mail</label><br>
+                    <input name="email" type="email" id="email" placeholder="DIGITE AQUI O SEU E-MAIL">
+                </div>
+            </div>
+                
+            <div class="form-item">
+                <label for="regiao-atend">Região de Atendimento</label><br>
+                <select name="regiao_atend" id="regiao-atend">
+                    <option>Região 1</option>
+                    <option>Região 2</option>
+                    <option>Região 3</option>
+                    <option>Região 4</option>
+                    <option>Região 5</option>
+                </select>
+            </div>
+        </fieldset>
+        <!--    Secão de projetos       -->
+        <fieldset class="fieldset-projetos">
+            <div class="form-item">
+                <label for="projetos">Cadastrar projetos</label><br>
+                <select name="equip_proj" id="projetos" size="5" multiple onclick="onlyThree ()">
+                    <option>Projeto 1</option>
+                    <option>Projeto 2</option>
+                    <option>Projeto 3</option>
+                    <option>Projeto 4</option>
+                    <option>Projeto 5</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="form-item">
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+    </div>
+</section>
+<!--        Fim do form 1        -->
+
+<!--        Início do Rodapé        -->
+<footer>
+    <div class="container flex">
+        <div class="footer-item">
+            <h6>Equipe:</h6>
+            <ul>
+                <li>Edson Victor</li>
+                <li>José Davi</li>
+                <li>Leandro Matos</li>
+                <li>Lucas de Oliveira</li>
+            </ul>
+        </div>
+        <div class="footer-item">
+            <p>
+                Trabalho de conclusão de disciplina solicitado: Sistemas de informação II.
+            </p></div>
+        <div class="footer-item">
+            <p>
+                Universidade Federal de Alagoas
+            </p>
+            <p>Campus do Sertão - SEDE</p>
+            <p>Curso de Engenharia de Producão</p>
+        </div><br>
+        <div class="line"></div>
+        <p>03/03/2022</p>
+        <p>Delmiro Gouveia - AL</p>
+    </div>
+</footer>   
+<!--        Fim do Rodapé        -->
+<script src="assets/js/validacao-form1.js"></script>
+<script src="assets/js/cpf_format.js"></script>
+</body>
+</html>

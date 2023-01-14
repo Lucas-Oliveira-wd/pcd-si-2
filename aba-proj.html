@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projeto de Conclusão de Disciplina, realizado em 23/02/2022, solicitado pelo professor
+    ROBERIO JOSE ROGERIO DOS SANTOS, da disciplina de Sistemas de Informacão 2, da Universidade Federal de Alagoas, Campus do Sertão SEDE em Delmiro Gouveia - Alagoas"/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="Lucas de Oliveira, Lorem ipsum, Lorem ipsum, Lorem ipsum" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="robots" content="index,follow" />
+    <title>Módulo de Integração e Gerência de Equipe</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" type="text/css" href="assets/css/geral.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/home.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/form2.css">
+
+</head>
+<body>
+<header>
+    <div class="container">
+        <!--        Início do menu de navegacão         -->
+        <nav>
+            <ul class="flex main-menu">
+                <li class="menu-item" id="main-menu-logo">
+                    <a href="index.html"><div class="img-wrapper"><img src="assets/img/logo-ufal-sertao.png" alt="Logo da UFAL campos do sertão"></div></a>
+                </li>
+                <li class="menu-item flex">
+                    <a href="index.html"> <h3>Home</h3> </a> 
+                </li>
+                <li class="menu-item flex">
+                    <a href="aba-equipe.html"><h3>Equipe</h3></a>
+                </li>
+                <li class="menu-item flex active">
+                    <a href="aba-proj.html"><h3>Projeto</h3></a>
+                </li>
+            </ul>
+        </nav>
+        <!--        Fim do menu de navegacão         -->
+    </div>
+</header>
+
+<!--        Início da página projeto        -->
+<section id="page-2">
+    <div class="container">
+        <form name = "form-proj" onsubmit="return validacao()" method="post" required>
+            <!--    campode selecionar projeto      -->
+            <fieldset class="fieldset-projeto">
+                <div class="form-item">
+                    <label for="sel-proj">Selecionar Projeto</label><br>
+                    <select id="sel-proj" name="sel_proj">
+                        <option>Projeto 1</option>
+                        <option>Projeto 2</option>
+                        <option>Projeto 3</option>
+                        <option>Projeto 4</option>
+                        <option>Projeto 5</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <!--           campo de dados do gerente do projeto         -->
+            <fieldset class="fieldset-projeto" id="field-gerente">
+                <h5>Cadastrar gerente</h5><br>
+                <div class="form-line">
+                    <div class="form-item">
+                        <label for="ger-name">Nome</label><br>
+                        <input type="text" id="ger-name"    name="ger_name" placeholder="DIGITE AQUI O NOME DO GERENTE">
+                    </div>
+                    <div class="form-item">
+                        <label for="ger-cpf">CPF</label><br>
+                        <input onkeypress="corrFormatCPF (this); justNumbers (this)" type="text" id="ger-cpf"     name="ger_cpf" placeholder="DIGITE  AQUI O CPF DO GERENTE">
+                    </div>
+                </div>
+                    
+                <div class="form-item">
+                    <label for="ger-unid-trab">Unidade de trabalho</label><br>
+                    <select id="ger-unid-trab" name="ger_unid_trab" >
+                        <option>Unidade 1</option>
+                        <option>Unidade 2</option>
+                        <option>Unidade 3</option>
+                        <option>Unidade 4</option>
+                        <option>Unidade 5</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset class="fieldset-projeto" id="fiel-perfil">
+                <h5>Cadastrar perfil</h5>
+                <div class="form-item">
+                    <label for="ger-desc">Adicione uma descrição do gerente</label><br>
+                    <textarea id="ger-desc" name="ger_desc"></textarea>
+                </div>
+                <div class="form-line">
+                    <div class="form-item">
+                    <label for="ger-foto">Selecionar uma foto</label><br>
+                    <input onchange="loadFile(event)" accept="image/*" type="file" id="ger-foto" name="ger_foto">
+                    </div>
+                    <div class="form-item">
+                        <div class="img-wrapper">
+                            <img src="assets/img/default-profile-picture.png" id="imgGerFoto" alt="Foto de perfil">
+                        </div>
+                    </div>
+                </div>
+                
+            </fieldset>
+            <!--        campo de selecionar tipo de atividade       -->
+            <fieldset class="fieldset-projeto" id="field-ativ-tipo">
+                <div class="form-item">
+                    <label for="ativ-tipo">Selecionar tipo da atividade</label><br>
+                    <select id="ativ-tipo" name="ativ_tipo">
+                        <option>Planejamento</option>
+                        <option>Execução</option>
+                        <option>Controle</option>
+                        <option>Acompanhamento</option>
+                        <option>Avaliação</option>
+                    </select>
+                </div>
+            </fieldset>
+            <!--        Campo de informação da atividade            -->
+            <fieldset class="fielset-projeto" id="field-info-ativ-1">
+                <h5>Informacões sobre a ativiadade</h5><br>
+                <div class="form-item">
+                    <label for="ativ-info-name">Nome</label><br>
+                    <input type="text" id="ativ-info-name" name="ativ_info_name">
+                </div>
+                <div class="form-line" onchange="culcDurProj ()">
+                    <div class="form-item">
+                        <label for="ativ-info-start-date">Informe a data de início</label><br>
+                        <input type="date" id="ativ-info-start-date" name="ativ_info_start_date">
+                    </div>
+                    <div class="form-item">
+                        <label for="ativ-info-end-date">Informe a data de término</label><br>
+                        <input onchange="culcDurProj ()" type="date" id="ativ-info-end-date" name="ativ_info_end_date">
+                    </div><br>
+                    <div class = "form-line" id="dur-proj-cal">
+                        <div class="form-item">
+                            <h5>Duração do projeto:</h5>
+                        </div>
+                        <div class="form-item">
+                            <p id="parDur"></p>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label for="ativ-info-custo">Custo Total</label><br>
+                        <input onkeypress=" justNumbers (this)" type="text" id="ativ-info-custo" name="ativ_info_custo">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="fielset-projeto" id="field-info-ativ-2">
+                <div class="form-item">
+                    <label for="ativ-info-desc">Descrição da Atividade</label><br>
+                    <textarea id="ativ-info-desc" name="ativ_info_desc"></textarea>
+                </div>
+            </fieldset>
+            <div class="form-item">
+                <input type="submit" value="ENVIAR">
+            </div>
+        </form>
+    </div>
+</section>
+
+<!--        Início do Rodapé        -->
+<footer>
+    <div class="container flex">
+        <div class="footer-item">
+            <h6>Equipe:</h6>
+            <ul>
+                <li>Edson Victor</li>
+                <li>José Davi</li>
+                <li>Leandro Matos</li>
+                <li>Lucas de Oliveira</li>
+            </ul>
+        </div>
+        <div class="footer-item">
+            <p>
+                Trabalho de conclusão de disciplina solicitado: Sistemas de informação II.
+            </p></div>
+        <div class="footer-item">
+            <p>
+                Universidade Federal de Alagoas
+            </p>
+            <p>Campus do Sertão - SEDE</p>
+            <p>Curso de Engenharia de Producão</p>
+        </div><br>
+        <div class="line"></div>
+        <p>03/03/2022</p>
+        <p>Delmiro Gouveia - AL</p>
+    </div>
+</footer>   
+<!--        Fim do Rodapé        -->
+<script src="assets/js/validacao_form2.js"></script>
+<script src="assets/js/format_moeda.js"></script>
+<script src="assets/js/cpf_format.js"></script>
+</body>
+</html>

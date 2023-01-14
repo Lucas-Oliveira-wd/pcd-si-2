@@ -1,0 +1,9 @@
+/*      Amimacão de zoom out        */
+@keyframes zoom-out {
+    0%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,32 @@
+#homepage .banner{
+   max-height: 300px;
+   overflow: hidden;
+   background-color: #000000;
+   position: relative;
+}
+
+#homepage .banner img{
+   opacity: 0.6;
+}
+
+#homepage .banner h2{
+   position: absolute;
+   top: 50px;
+   left: 20%; right: 20%;
+   color: #eee;
+   text-shadow: #00000008 .2rem .2rem 0.5rem;
+   text-emphasis: none;
+   font-size: 3rem;
+   text-align: center;
+   line-height: 5rem;
+}
+
+#homepage .head-line{
+   padding: 6rem 0;
+}
+
+#homepage .head-line p{
+   text-align: center;
+   font-weight: 500;
+   font-size: 1.5rem;
+}
